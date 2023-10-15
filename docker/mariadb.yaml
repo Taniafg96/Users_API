@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example_password # Change this
+      MARIADB_DATABASE: mysql # Change this
+    volumes:
+      - ./init_mariadb.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data:/var/lib/mysql
+    ports:
+      - 3000:3306

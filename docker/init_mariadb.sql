@@ -1,5 +1,5 @@
-CREATE USER 'user1'@localhost IDENTIFIED BY 'password1';
-GRANT ALL PRIVILEGES ON *.* TO 'user1'@localhost IDENTIFIED BY 'password1';
+CREATE USER 'user1'@'%' IDENTIFIED BY 'password1';
+GRANT ALL PRIVILEGES ON mysql.* TO 'user1'@'%' IDENTIFIED BY 'password1' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 use mysql;
@@ -7,7 +7,7 @@ use mysql;
 create table users (
     id int not null auto_increment,
     username varchar(255) not null,
-    email varchar(255) not null,
+    email varchar(255) not null UNIQUE,
     password varchar(255) not null,
     is_active boolean,
     is_superuser boolean,

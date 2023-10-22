@@ -8,7 +8,7 @@ users (username, email, password, is_active, is_superuser, created_at, updated_a
 VALUES ('{}', '{}', '{}', {}, {}, '{}', '{}'); """
 
 ### UPDATE ###
-UPDATE_USER = """ UPDATE users SET username = '{}', email = '{}', password = '{}' WHERE id = {}; """
+UPDATE_USER = """ UPDATE users SET {} WHERE id = {}; """
 
 ### DELETE ###
 DELETE_USER = """ DELETE FROM users WHERE id = {}; """

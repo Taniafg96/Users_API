@@ -1,8 +1,9 @@
 from configparser import ConfigParser
 from contextlib import closing
-from logging import Logger
 
 import mariadb
+
+from src.logger import Logger
 
 
 class MariaDBConector:
